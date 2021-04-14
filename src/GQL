@@ -1,0 +1,241 @@
+------delete Todo------------------
+mutation($id: ID!){
+     deleteTodo(id: $id)
+  }
+
+ ---------------------------- 
+query($id: ID!){
+    user(id: $id){
+    id
+    name
+    username
+    email
+    address{
+        street
+        suite
+        city
+        zipcode
+        }
+    phone
+    website
+    todos{
+        data{
+            id
+            title
+            completed
+    
+            }
+        }
+    }
+}
+
+
+Response : --------
+
+{
+  "data": {
+    "user": {
+      "id": "3",
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "email": "Nathan@yesenia.net",
+      "address": {
+        "street": "Douglas Extension",
+        "suite": "Suite 847",
+        "city": "McKenziehaven",
+        "zipcode": "59590-4157"
+      },
+      "phone": "1-463-123-4447",
+      "website": "ramiro.info",
+      "todos": {
+        "data": [
+          {
+            "id": "41",
+            "title": "aliquid amet impedit consequatur aspernatur placeat eaque fugiat suscipit",
+            "completed": false
+          },
+          {
+            "id": "42",
+            "title": "rerum perferendis error quia ut eveniet",
+            "completed": false
+          },
+          {
+            "id": "43",
+            "title": "tempore ut sint quis recusandae",
+            "completed": true
+          },
+          {
+            "id": "44",
+            "title": "cum debitis quis accusamus doloremque ipsa natus sapiente omnis",
+            "completed": true
+          },
+          {
+            "id": "45",
+            "title": "velit soluta adipisci molestias reiciendis harum",
+            "completed": false
+          },
+          {
+            "id": "46",
+            "title": "vel voluptatem repellat nihil placeat corporis",
+            "completed": false
+          },
+          {
+            "id": "47",
+            "title": "nam qui rerum fugiat accusamus",
+            "completed": false
+          },
+          {
+            "id": "48",
+            "title": "sit reprehenderit omnis quia",
+            "completed": false
+          },
+          {
+            "id": "49",
+            "title": "ut necessitatibus aut maiores debitis officia blanditiis velit et",
+            "completed": false
+          },
+          {
+            "id": "50",
+            "title": "cupiditate necessitatibus ullam aut quis dolor voluptate",
+            "completed": true
+          },
+          {
+            "id": "51",
+            "title": "distinctio exercitationem ab doloribus",
+            "completed": false
+          },
+          {
+            "id": "52",
+            "title": "nesciunt dolorum quis recusandae ad pariatur ratione",
+            "completed": false
+          },
+          {
+            "id": "53",
+            "title": "qui labore est occaecati recusandae aliquid quam",
+            "completed": false
+          },
+          {
+            "id": "54",
+            "title": "quis et est ut voluptate quam dolor",
+            "completed": true
+          },
+          {
+            "id": "55",
+            "title": "voluptatum omnis minima qui occaecati provident nulla voluptatem ratione",
+            "completed": true
+          },
+          {
+            "id": "56",
+            "title": "deleniti ea temporibus enim",
+            "completed": true
+          },
+          {
+            "id": "57",
+            "title": "pariatur et magnam ea doloribus similique voluptatem rerum quia",
+            "completed": false
+          },
+          {
+            "id": "58",
+            "title": "est dicta totam qui explicabo doloribus qui dignissimos",
+            "completed": false
+          },
+          {
+            "id": "59",
+            "title": "perspiciatis velit id laborum placeat iusto et aliquam odio",
+            "completed": false
+          },
+          {
+            "id": "60",
+            "title": "et sequi qui architecto ut adipisci",
+            "completed": true
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+----------------------  Query 2 ----------------
+ query ($options: PageQueryOptions) {
+  users(options: $options) {
+    data {
+      id
+      name
+      username
+    }
+    meta {
+      totalCount
+    }
+  }
+}
+
+--------Response------------
+
+{
+  "data": {
+    "users": {
+      "data": [
+        {
+          "id": "1",
+          "name": "Leanne Graham",
+          "username": "Bret"
+        },
+        {
+          "id": "2",
+          "name": "Ervin Howell",
+          "username": "Antonette"
+        },
+        {
+          "id": "3",
+          "name": "Clementine Bauch",
+          "username": "Samantha"
+        },
+        {
+          "id": "4",
+          "name": "Patricia Lebsack",
+          "username": "Karianne"
+        },
+        {
+          "id": "5",
+          "name": "Chelsey Dietrich",
+          "username": "Kamren"
+        },
+        {
+          "id": "6",
+          "name": "Mrs. Dennis Schulist",
+          "username": "Leopoldo_Corkery"
+        },
+        {
+          "id": "7",
+          "name": "Kurtis Weissnat",
+          "username": "Elwyn.Skiles"
+        },
+        {
+          "id": "8",
+          "name": "Nicholas Runolfsdottir V",
+          "username": "Maxime_Nienow"
+        },
+        {
+          "id": "9",
+          "name": "Glenna Reichert",
+          "username": "Delphine"
+        },
+        {
+          "id": "10",
+          "name": "Clementina DuBuque",
+          "username": "Moriah.Stanton"
+        }
+      ],
+      "meta": null
+    }
+  }
+}

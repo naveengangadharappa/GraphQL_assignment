@@ -1,0 +1,36 @@
+.List-Container {
+  margin: 3rem;
+  width: 40%;
+  height: 70%;
+  background-color: whitesmoke;
+  border: 0.5rem;
+  border-color: black;
+  box-shadow: 0.5px 1px 3px 1px lightgray;
+}
+.List-textheading {
+  margin: 10px;
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  width: 100%;
+}
+.List-text {
+  margin: 10px;
+  padding: 1px;
+  font-size: large;
+}
+.add-list {
+  margin: 1rem;
+  border-style: solid;
+  border-color: aqua;
+  border-radius: 50%;
+  border-width: 1px;
+  background-color: aliceblue;
+  text-align: center;
+  height: fit-content;
+  width: fit-content;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: darkgreen;
+}

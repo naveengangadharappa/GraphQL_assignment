@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+}
+
+.Container {
+  display: flex;
+  /* background-color: aquamarine; */
 }
 
 .App-logo {
@@ -35,4 +40,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.UserList-Container {
+  margin: 3rem;
+  width: 40%;
+  height: 70%;
+  background-color: whitesmoke;
+  border: 0.5rem;
+  border-color: black;
+  box-shadow: 0.5px 1px 3px 1px lightgray;
+}
+.UserList-textheading {
+  margin: 10px;
+  padding: 10px;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  width: 100%;
+}
+.UserList-text {
+  margin: 10px;
+  padding: 1px;
+  font-size: large;
 }
