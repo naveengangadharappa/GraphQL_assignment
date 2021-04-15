@@ -9,18 +9,28 @@ function Dashboard(props) {
     const [userdetails, setuser_details] = useState({});
     const [todolist, settodo_list] = useState([]);
     const [loading, setloading] = useState(false);
-
+    const [uid, set_uid] = useState('');
 
     useEffect(async () => {
         try {
-            console.log(props)
             let userid = props.location.state.userid;
-            console.log("Userid =  " + userid);
             if (userid) {
-                console.log("Userid = " + userid);
+                console.log("user id = " + userid);
+                set_uid(userid);
+                await LoadData(userid);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }, []);
+
+    const LoadData = async (user_id) => {
+        try {
+            console.log("Enterd LoadData = " + user_id);
+            if (user_id) {
                 let query = `
                 {
-                    user(id: ${userid}){
+                    user(id: ${user_id}){
             id
             name
             username
@@ -55,7 +65,7 @@ function Dashboard(props) {
         } catch (err) {
             console.log(err);
         }
-    }, []);
+    }
 
     if (loading) return <h2>loading.....</h2>
     else {
@@ -64,7 +74,7 @@ function Dashboard(props) {
                 <NavBar {...props} />
                 <div class="Container" style={{ flexDirection: "row" }}>
                     {userdetails && <UserDetails userdetails={userdetails} />}
-                    {todolist && <TodoList todolist={todolist} />}
+                    {todolist && <TodoList todolist={todolist} LoadData={LoadData} user_id={uid} />}
                 </div>
             </>
         );
