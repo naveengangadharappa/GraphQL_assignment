@@ -239,3 +239,38 @@ Response : --------
     }
   }
 }
+
+
+-------------------------   Insert Todo list ----------------------
+
+mutation ($input:  CreateTodoInput!) {
+  createTodo(input: $input) {
+    title
+    completed
+    id
+  }
+}
+
+---------------   Response    --------------------
+
+{
+  "data": {
+    "createTodo": {
+      "title": "itemNew",
+      "completed": true
+      "id":"123"
+    }
+  }
+}
+
+
+-------------    update Todolist  --------------------
+mutation (
+                    $id: ID!,
+                    $input: UpdateTodoInput!
+                  ) {
+                    updateTodo(id: ${id}, input: ${completed}) {
+                      id
+                      completed
+                    }
+                  }
